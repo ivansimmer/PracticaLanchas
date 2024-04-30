@@ -1,0 +1,12 @@
+﻿  main.cpp
+E:\M5_Entornos\PruebaSFML\PruebaSFML\main.cpp(10,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+E:\M5_Entornos\PruebaSFML\PruebaSFML\main.cpp(66,104): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  PruebaSFML.vcxproj -> E:\M5_Entornos\PruebaSFML\PruebaSFML\x64\Debug\PruebaSFML.exe
