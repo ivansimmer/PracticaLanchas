@@ -87,7 +87,7 @@ int main() {
 
     // Crear un objeto de texto para mostrar el mensaje de ganador
     sf::Font font;
-    if (!font.loadFromFile("arial.ttf")) { 
+    if (!font.loadFromFile("D:\\M5\\PruebaSFML\\Fonts\\arial.ttf")) { 
         cerr << "Error al cargar la fuente" << endl;
         return 1; // Salir del programa si hay un error
     }

@@ -36,9 +36,10 @@
               "RelativeDocumentMoniker": "lancha.h",
               "ToolTip": "D:\\M5\\PruebaSFML\\lancha.h",
               "RelativeToolTip": "lancha.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-25T06:18:40.946Z"
+              "WhenOpened": "2024-04-25T06:18:40.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,9 +49,10 @@
               "RelativeDocumentMoniker": "lancha.cpp",
               "ToolTip": "D:\\M5\\PruebaSFML\\lancha.cpp",
               "RelativeToolTip": "lancha.cpp",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEAAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-25T06:18:58.701Z"
+              "WhenOpened": "2024-04-25T06:18:58.701Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,7 +62,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\M5\\PruebaSFML\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAASAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-23T11:16:59.982Z",
               "EditorCaption": ""

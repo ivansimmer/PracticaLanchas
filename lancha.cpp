@@ -40,7 +40,7 @@ bool Lancha::turnoConInteraccion(sf::RenderWindow& window) {
 
 void Lancha::mostrarMensajeNitro(sf::RenderWindow& window) {
     sf::Font font;
-    font.loadFromFile("arial.ttf");
+    font.loadFromFile("D:\\M5\\PruebaSFML\\Fonts\\arial.ttf");
     mensajeNitro.setFont(font);
     mensajeNitro.setString("¿Usar nitro?");
     mensajeNitro.setCharacterSize(30);
