@@ -39,10 +39,6 @@ public:
 
     sf::Vector2f getPosition() const; // Declaramos el método getPosition() que devuelve la posición de la lancha
 
-    void mostrarMensajeNitro(sf::RenderWindow& window);
-
-    bool turnoConInteraccion(sf::RenderWindow& window);
-
 };
 
 #endif // lancha_h

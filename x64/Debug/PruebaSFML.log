@@ -1,6 +1,7 @@
-﻿  main.cpp
-E:\M5_Entornos\PruebaSFML\PruebaSFML\main.cpp(10,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-E:\M5_Entornos\PruebaSFML\PruebaSFML\main.cpp(66,104): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+﻿  lancha.cpp
+  main.cpp
+C:\Users\ivans\OneDrive - Centre d'Estudis Monlau\Documents\GitHub\PracticaLanchas\main.cpp(10,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\ivans\OneDrive - Centre d'Estudis Monlau\Documents\GitHub\PracticaLanchas\main.cpp(71,104): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=unsigned int
@@ -9,4 +10,6 @@ E:\M5_Entornos\PruebaSFML\PruebaSFML\main.cpp(66,104): warning C4244: 'argumento
           [
               T=float
           ]
-  PruebaSFML.vcxproj -> E:\M5_Entornos\PruebaSFML\PruebaSFML\x64\Debug\PruebaSFML.exe
+  Generando código...
+C:\Users\ivans\OneDrive - Centre d'Estudis Monlau\Documents\GitHub\PracticaLanchas\lancha.cpp(32): warning C4715: 'Lancha::usoNitro': no todas las rutas de acceso de control devuelven un valor
+  PruebaSFML.vcxproj -> C:\Users\ivans\OneDrive - Centre d'Estudis Monlau\Documents\GitHub\PracticaLanchas\x64\Debug\PruebaSFML.exe

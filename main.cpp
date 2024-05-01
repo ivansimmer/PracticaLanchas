@@ -29,23 +29,28 @@ int main() {
 
     float windowOffset = 0; // Offset de la ventana
 
+    string opcNitroNegra = "";
+    string opcNitroRoja = "";
+
     // Bucle de la jugabilidad con los turnos
     const int numTurnos = 5;
     for (int turno = 1; turno <= numTurnos; turno++) {
         cout << "Turno " << turno << endl;
 
-        lancha1.mostrarMensajeNitro(window);
-        bool usarNitroLancha1 = lancha1.turnoConInteraccion(window);
-        if (usarNitroLancha1) {
+        cout << "Lancha Negra: ";
+        cout << "Quieres usar el nitro (s/n)?";
+        cin >> opcNitroNegra;
+        if (opcNitroNegra == "s") {
             lancha1.usoNitro();
         }
         lancha1.giraDado();
         lancha1.actualizaDistancia();
 
-        lancha2.mostrarMensajeNitro(window);
-        bool usarNitroLancha2 = lancha2.turnoConInteraccion(window);
-        if (usarNitroLancha2) {
-            lancha1.usoNitro();
+        cout << "Lancha Roja: ";
+        cout << "Quieres usar el nitro (s/n)?";
+        cin >> opcNitroRoja;
+        if (opcNitroRoja == "s") {
+            lancha2.usoNitro();
         }
         lancha2.giraDado();
         lancha2.actualizaDistancia();
@@ -85,12 +90,6 @@ int main() {
         mensaje = "Ha ocurrido un empate!";
     }
 
-    // Crear un objeto de texto para mostrar el mensaje de ganador
-    sf::Font font;
-    if (!font.loadFromFile("D:\\M5\\PruebaSFML\\Fonts\\arial.ttf")) { 
-        cerr << "Error al cargar la fuente" << endl;
-        return 1; // Salir del programa si hay un error
-    }
 
     sf::Text ganadorText;
     ganadorText.setFont(font);

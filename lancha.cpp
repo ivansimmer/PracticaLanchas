@@ -18,48 +18,6 @@ void Lancha::giraDado() {
     cout << "La velocidad actual es: " << velocidad << "\n";
 }
 
-bool Lancha::turnoConInteraccion(sf::RenderWindow& window) {
-    sf::Event event;
-    while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            window.close();
-            return false;
-        }
-        else if (event.type == sf::Event::MouseButtonPressed) {
-            sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-            if (botonSi.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-                return true;
-            }
-            else if (botonNo.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-                return false;
-            }
-        }
-    }
-    return false;
-}
-
-void Lancha::mostrarMensajeNitro(sf::RenderWindow& window) {
-    sf::Font font;
-    font.loadFromFile("D:\\M5\\PruebaSFML\\Fonts\\arial.ttf");
-    mensajeNitro.setFont(font);
-    mensajeNitro.setString("¿Usar nitro?");
-    mensajeNitro.setCharacterSize(30);
-    mensajeNitro.setPosition(100, 100);
-
-    botonSi.setSize(sf::Vector2f(80, 50));
-    botonSi.setFillColor(sf::Color::Green);
-    botonSi.setPosition(100, 200);
-
-    botonNo.setSize(sf::Vector2f(80, 50));
-    botonNo.setFillColor(sf::Color::Red);
-    botonNo.setPosition(200, 200);
-
-    window.draw(mensajeNitro);
-    window.draw(botonSi);
-    window.draw(botonNo);
-    window.display();
-}
-
 int Lancha::usoNitro() {
     if (nitro > 0) {
         int random = rand() % 2; // Numero random entre 0 y 1
