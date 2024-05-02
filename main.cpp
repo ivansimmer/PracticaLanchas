@@ -35,7 +35,7 @@ int main() {
     // Bucle de la jugabilidad con los turnos
     const int numTurnos = 5;
     for (int turno = 1; turno <= numTurnos; turno++) {
-        cout << "Turno " << turno << endl;
+        cout << "Turno " << turno << "--------------------------------------------" << endl;
 
         cout << "Lancha Negra: ";
         cout << "Quieres usar el nitro (s/n)?";
@@ -45,6 +45,8 @@ int main() {
         }
         lancha1.giraDado();
         lancha1.actualizaDistancia();
+
+        cout << "\n";
 
         cout << "Lancha Roja: ";
         cout << "Quieres usar el nitro (s/n)?";
@@ -76,45 +78,46 @@ int main() {
 
         window.display();
 
+        cout << "\n";
+
         sf::sleep(sf::seconds(1.5));
     }
 
-    string mensaje;
+    // Crea una ventana de 640x480x32 con el título SFML window
+    sf::RenderWindow window2(sf::VideoMode(100, 200, 32), "Ganador");
+    sf::RectangleShape cuadro(sf::Vector2f(100, 200));
+
     if (lancha1.getDistancia() > lancha2.getDistancia()) {
-        mensaje =  "La lancha negra ha ganado la carrera!";
+        cout << "La lancha negra ha ganado la carrera!";
+        cuadro.setFillColor(sf::Color::Black);
     }
     else if (lancha1.getDistancia() < lancha2.getDistancia()) {
-        mensaje = "La lancha roja ha ganado la carrera!";
+        cout << "La lancha roja ha ganado la carrera!";
+        cuadro.setFillColor(sf::Color::Red);
     }
     else {
-        mensaje = "Ha ocurrido un empate!";
+        cout << "Ha ocurrido un empate!";
     }
 
-
-    sf::Text ganadorText;
-    ganadorText.setFont(font);
-    ganadorText.setString(mensaje);
-    ganadorText.setCharacterSize(48);
-    ganadorText.setFillColor(sf::Color::White);
-    ganadorText.setStyle(sf::Text::Bold);
-
-    // Centrar el texto en la ventana
-    sf::FloatRect textRect = ganadorText.getLocalBounds();
-    ganadorText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
-    ganadorText.setPosition(sf::Vector2f(screenWidth / 2.0f, screenHeight / 2.0f));
-
-    // Bucle principal para mostrar la ventana emergente
-    while (window.isOpen()) {
+    // Game Loop mientras la ventana esté abierta
+    while (window2.isOpen())
+    {
+        // Creamos un objeto evento
         sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
+        // Procesamos la pila de eventos
+        while (window2.isOpen())
+        {
+            sf::Event event;
+            while (window2.pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    window2.close();
             }
-        }
 
-        window.clear(backgroundColor);
-        window.draw(ganadorText); // Dibujar el texto del ganador
-        window.display();
+            window2.clear();
+            window2.draw(cuadro);
+            window2.display();
+        }
     }
 
     return 0;

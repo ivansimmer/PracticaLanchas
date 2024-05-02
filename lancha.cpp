@@ -23,9 +23,11 @@ int Lancha::usoNitro() {
         int random = rand() % 2; // Numero random entre 0 y 1
         if (random == 0) {
             velocidad /= 2.0f; // Divido la velocidad entre dos
+            cout << "El motor de tu lancha ha petado, divide entre dos la velocidad\n";
         }
         else {
             velocidad *= 2.0f; // Multiplico la velocidad por dos
+            cout << "Tu motor ha mejorado magicamente, duplicas la velocidad\n";
         }
         return nitro;
     }

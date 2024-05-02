@@ -16,9 +16,6 @@ private:
     string nombre;
     sf::Color color; // Agregamos un color como atributo
     sf::Vector2f posicion; // Atributo para almacenar la posición de la lancha
-    sf::Text mensajeNitro;
-    sf::RectangleShape botonSi;
-    sf::RectangleShape botonNo;
 
 public:
     Lancha(string nombreLancha, sf::Color colorLancha);
