@@ -16,6 +16,8 @@ private:
     string nombre;
     sf::Color color; // Agregamos un color como atributo
     sf::Vector2f posicion; // Atributo para almacenar la posición de la lancha
+    float factorNitro; // Valoro si se multiplica o divide la velocidad y lo asigno como factor
+    bool nitroUsado; // Para comprobar si se ha usado la nitro
 
 public:
     Lancha(string nombreLancha, sf::Color colorLancha);
@@ -35,6 +37,8 @@ public:
     void setPosition(sf::Vector2f nuevaPosicion);
 
     sf::Vector2f getPosition() const; // Declaramos el método getPosition() que devuelve la posición de la lancha
+
+    float getFactorNitro();
 
 };
 

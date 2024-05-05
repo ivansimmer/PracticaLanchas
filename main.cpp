@@ -57,8 +57,14 @@ int main() {
         lancha2.giraDado();
         lancha2.actualizaDistancia();
 
+        // Declaracion factorNitro de las lanchas
+        float lanchaFactorNitro1 = lancha1.getFactorNitro();
+        float lanchaFactorNitro2 = lancha2.getFactorNitro();
+
         // Calcular el desplazamiento de la ventana
-        float lanchaDistancia = max(lancha1.getDistancia(), lancha2.getDistancia());
+        float lanchaDistancia1 = lancha1.getDistancia() * lanchaFactorNitro1;
+        float lanchaDistancia2 = lancha2.getDistancia() * lanchaFactorNitro2;
+        float lanchaDistancia = max(lanchaDistancia1, lanchaDistancia2);
         windowOffset = max(windowOffset, lanchaDistancia + 200 - window.getSize().x); // Desplazar la ventana si es necesario
 
         // Actualizar la posición de las lanchas en relación con el desplazamiento de la ventana
@@ -85,19 +91,32 @@ int main() {
 
     // Crea una ventana de 640x480x32 con el título SFML window
     sf::RenderWindow window2(sf::VideoMode(100, 200, 32), "Ganador");
-    sf::RectangleShape cuadro(sf::Vector2f(100, 200));
 
+    sf::Color fondoColor;
     if (lancha1.getDistancia() > lancha2.getDistancia()) {
         cout << "La lancha negra ha ganado la carrera!";
-        cuadro.setFillColor(sf::Color::Black);
+        fondoColor = sf::Color::Black;
     }
     else if (lancha1.getDistancia() < lancha2.getDistancia()) {
         cout << "La lancha roja ha ganado la carrera!";
-        cuadro.setFillColor(sf::Color::Red);
+        fondoColor = sf::Color::Red;
     }
     else {
         cout << "Ha ocurrido un empate!";
+        fondoColor = sf::Color::White;
     }
+
+    window2.clear(fondoColor);
+
+    // Crea un cuadro con el color del ganador
+    sf::RectangleShape cuadro(sf::Vector2f(100, 200));
+    cuadro.setFillColor(fondoColor);
+
+    // Dibuja el cuadro en la ventana
+    window2.draw(cuadro);
+
+    // Muestra la ventana
+    window2.display();
 
     // Game Loop mientras la ventana esté abierta
     while (window2.isOpen())
@@ -113,23 +132,8 @@ int main() {
                 if (event.type == sf::Event::Closed)
                     window2.close();
             }
-
-            window2.clear();
-            window2.draw(cuadro);
-            window2.display();
         }
     }
 
     return 0;
 }
-
-/*
-    29/04:
-        - Las barcas se mueven 
-        - No muestra mensaje de quien es el ganador
-        - No muestra mensaje de si se quiere usar nitro ni las opciones s/n
-        - Error con la fuente de texto
-        - Poner un fondo
-        - Mejorar la estetica de las barcas
-        - (Contador que se va actualizando de la distancia a la que se encuentran las barcas)
-*/
